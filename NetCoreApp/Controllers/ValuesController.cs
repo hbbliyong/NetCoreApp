@@ -19,12 +19,10 @@ namespace WebApplication1.Controllers
             this.md5Context = md5Context;
             this.userService = userService;
         }
-        //public ValuesController( IUserService userService)
-        //{
-        //   // this.md5Context = md5Context;
-        //    this.userService = userService;
-        //}
-        // GET api/values
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -39,8 +37,8 @@ namespace WebApplication1.Controllers
         public ActionResult<string> Get(int id)
         {
             List<User> list = userService.GetUsers().Result;
-            return string.Join(",", list.Select(t => t.UserName+"==="+t.Password).ToArray<string>());
-           // return "value";
+            return string.Join(",", list.Select(t => t.UserName + "===" + t.Password).ToArray<string>());
+            // return "value";
         }
 
         // POST api/values
