@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NetCoreApp.Model;
 using WebApplication1.model;
 using WebApplication1.Services;
 
@@ -45,6 +46,17 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+        }
+        /// <summary>
+        /// 接收Userinfo实体
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <param name="value">用户信息</param>
+        /// <returns></returns>
+        [HttpPost("{id}")]
+        public string PostData(string id,[FromBody] UserInfo value)
+        {
+            return $"{id}=={value.ToString()}";
         }
 
         // PUT api/values/5

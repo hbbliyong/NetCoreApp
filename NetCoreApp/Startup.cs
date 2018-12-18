@@ -61,12 +61,24 @@ namespace WebApplication1
 
             #endregion
 
+            #region Api版本控制服务
+            services.AddApiVersioning(o =>
+            {
+                //ReportApiVersion 属性是一个布尔类型，如果设置为true, 在Api请求的响应头部，会追加当前Api支持的版本
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+            });
+            #endregion
+            #region autofac
+
             var builder = new ContainerBuilder();
             builder.RegisterModule(new Evolution());
             builder.Populate(services);
             var container = builder.Build();
 
             return container.Resolve<IServiceProvider>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

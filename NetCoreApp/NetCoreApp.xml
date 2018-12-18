@@ -10,5 +10,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:WebApplication1.Controllers.ValuesController.PostData(System.String,NetCoreApp.Model.UserInfo)">
+            <summary>
+            接收Userinfo实体
+            </summary>
+            <param name="id">id</param>
+            <param name="value">用户信息</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
