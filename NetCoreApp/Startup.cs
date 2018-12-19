@@ -16,6 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using NetCoreApp.Db;
+using NetCoreApp.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using WebApplication1.Config;
 using WebApplication1.Respository;
@@ -35,7 +37,8 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Md5Context>(options => options.UseMySql(Configuration.GetConnectionString("MySql")));
+            services.Configure<DbContextOption>(Configuration.GetSection("MySqlDbSettings"));
+            services.AddDbContext<MySqlDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MySql")));
 
             //配置mongodb依赖
             string mongoConnectionString = Configuration.GetSection("Mongo:ConnectionStrings").Value;

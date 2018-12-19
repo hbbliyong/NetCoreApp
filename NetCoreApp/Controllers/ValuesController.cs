@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreApp.Model;
-using WebApplication1.model;
 using WebApplication1.Services;
 
-namespace WebApplication1.Controllers
+namespace NetCoreApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

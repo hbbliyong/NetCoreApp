@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication1.model
+namespace NetCoreApp.Model
 {
     [Table("User")]
     public class User

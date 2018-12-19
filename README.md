@@ -1,7 +1,8 @@
 # Asp.Net Core 2.0
-
-## 1. Swagger
+## 1.更新日志
+[更新日志](md/log.md)
+## 2. Swagger
 [Swagger使用说明](md/Swagger.md)
 
-## 2. API多版本支持
+## 3. API多版本支持
 [多版本支持](md/ApiVersion.md)
