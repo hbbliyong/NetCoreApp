@@ -20,7 +20,8 @@ namespace NetCoreApp.Db
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           // optionsBuilder.UseLazyLoadingProxies().UseMySql(_option.ConnectionString);
+            //延迟加载，需要添加Microsoft.EntityFrameworkCore.Proxies包
+            // optionsBuilder.UseLazyLoadingProxies().UseMySql(_option.ConnectionString);
             optionsBuilder.UseMySql(_option.ConnectionString);
             base.OnConfiguring(optionsBuilder);
         }

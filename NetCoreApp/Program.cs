@@ -14,7 +14,13 @@ namespace WebApplication1
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("hosting.json",optional:true).Build();
+
+            CreateWebHostBuilder(args)
+                .UseConfiguration(config)
+                .Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
